@@ -24,7 +24,7 @@ function showDialogue(sceneData) {
       if(sceneData.background === "kitchen.png"){
         let frontImg;
         frontImg = document.createElement("img");
-        frontImg.src = assets/backgrounds/kitchen_front.png;
+        frontImg.src = `assets/backgrounds/kitchen_front.png`;
         frontImg.style.zIndex = "2";
         gameEl.appendChild(frontImg);
       }
@@ -198,6 +198,7 @@ function showDialogue(sceneData) {
     gameEl.appendChild(wrapper);
 
   }
+
 
 
 
