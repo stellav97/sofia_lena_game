@@ -20,7 +20,7 @@ function showDialogue(sceneData) {
   
     // Set background image
     if (sceneData.background) {
-      gameEl.style.backgroundImage = url(`assets/backgrounds/${sceneData.background}`);
+      gameEl.style.backgroundImage = `url('assets/backgrounds/${sceneData.background}')`;
       if(sceneData.background === "kitchen.png"){
         let frontImg;
         frontImg = document.createElement("img");
@@ -198,5 +198,6 @@ function showDialogue(sceneData) {
     gameEl.appendChild(wrapper);
 
   }
+
 
 
