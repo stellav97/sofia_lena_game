@@ -11,7 +11,7 @@ function showDialogue(sceneData) {
   
     // Play new scene-specific music
     if (sceneData.music) {
-      const music = new Audio(assets/sfx/$sceneData.music);
+      const music = new Audio(`assets/sfx/${sceneData.music}`);
       music.loop = true;
       music.volume = 0.4;
       music.play();
@@ -198,4 +198,5 @@ function showDialogue(sceneData) {
     gameEl.appendChild(wrapper);
 
   }
+
 
