@@ -11,7 +11,7 @@ function showDialogue(sceneData) {
   
     // Play new scene-specific music
     if (sceneData.music) {
-      const music = new Audio(assets/sfx/${sceneData.music});
+      const music = new Audio(assets/sfx/$sceneData.music);
       music.loop = true;
       music.volume = 0.4;
       music.play();
@@ -20,7 +20,7 @@ function showDialogue(sceneData) {
   
     // Set background image
     if (sceneData.background) {
-      gameEl.style.backgroundImage = url('assets/backgrounds/${sceneData.background}');
+      gameEl.style.backgroundImage = url('assets/backgrounds/$sceneData.background');
       if(sceneData.background === "kitchen.png"){
         let frontImg;
         frontImg = document.createElement("img");
@@ -196,4 +196,5 @@ function showDialogue(sceneData) {
   
     wrapper.appendChild(buttonContainer);
     gameEl.appendChild(wrapper);
+
   }
