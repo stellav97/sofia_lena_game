@@ -20,7 +20,7 @@ function showDialogue(sceneData) {
   
     // Set background image
     if (sceneData.background) {
-      gameEl.style.backgroundImage = url('assets/backgrounds/$sceneData.background');
+      gameEl.style.backgroundImage = url(`assets/backgrounds/${sceneData.background}`);
       if(sceneData.background === "kitchen.png"){
         let frontImg;
         frontImg = document.createElement("img");
@@ -36,7 +36,7 @@ function showDialogue(sceneData) {
     let charImg;
     if (sceneData.character) {
       charImg = document.createElement("img");
-      charImg.src = assets/characters/${sceneData.character};
+      charImg.src = `assets/characters/${sceneData.character}`;
       charImg.alt = "Character";
       if(sceneData.walkIn) charImg.className = "character character-walk-in";
       else charImg.className = "character";
@@ -52,7 +52,7 @@ function showDialogue(sceneData) {
     let enemyImg;
     if (sceneData.enemy) {
       enemyImg = document.createElement("img");
-      enemyImg.src = assets/villains/${sceneData.enemy};
+      enemyImg.src = `assets/villains/${sceneData.enemy}`;
       enemyImg.alt = "Enemy";
       if(sceneData.walkIn) enemyImg.className = "enemy enemy-walk-in";
       else if(sceneData.id.includes("win")) enemyImg.className = "enemy enemy-defeated";
@@ -198,3 +198,4 @@ function showDialogue(sceneData) {
     gameEl.appendChild(wrapper);
 
   }
+
