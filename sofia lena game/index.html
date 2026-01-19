@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Birthday RPG Game</title>
+  <link rel="stylesheet" href="style/main.css" />
+  <link rel="preload" href="{assets/backgrounds/bedroom.png}" as="image" />
+  <link rel="preload" href="{assets/backgrounds/kitchen.png}" as="image" />
+  <link rel="preload" href="{assets/backgrounds/living_room.png}" as="image" />
+  <link rel="preload" href="{assets/backgrounds/outside.gif}" as="image" />
+  <link rel="preload" href="{assets/backgrounds/bedroom_darker_inside.png}" as="image" />
+  <link rel="preload" href="{assets/backgrounds/final_cake.png}" as="image" />
+  <link rel="preload" href="{assets/backgrounds/final_party.png}" as="image" />
+  <link rel="preload" href="{assets/backgrounds/kitchen_front.png}" as="image" />
+  <style>
+    #opening-screen {
+      position: absolute;
+      inset: 0;
+      background: #111;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      transition: opacity 0.6s ease;
+    }
+
+    .play-button {
+      width: 120px;
+      height: 120px;
+      background: #ffeacc;
+      border: 4px solid #ff9900;
+      border-radius: 50%;
+      box-shadow: 4px 4px 0 #ff6600, -4px -4px 0 #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .triangle {
+      width: 0;
+      height: 0;
+      border-left: 30px solid #ff6600;
+      border-top: 18px solid transparent;
+      border-bottom: 18px solid transparent;
+      margin-left: 4px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    #game {
+      animation: fadeIn 2s ease;
+    }
+  </style>
+</head>
+<body>
+  <div id="opening-screen">
+    <div>
+      <div class="play-button" style="margin-bottom: 40px;">
+        <div class="triangle"></div>
+      </div>
+      <div class="language-dropdown" style="display: flex; justify-content: center;">
+        <select id="language-select">
+          <option value="gr">🇬🇷 GR</option>
+          <!--<option value="en">🇮🇹 IT</option>-->
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div id="game" style="display: none;"></div>
+
+  <script src="scripts/state.js"></script>
+  <script src="scripts/dialogue.js"></script>
+  <script src="scripts/scenes.js"></script>
+  <script src="scripts/game.js"></script>
+  <script>
+    document.querySelector('.play-button').addEventListener('click', () => {
+      const opening = document.getElementById('opening-screen');
+      opening.style.opacity = 0;
+      setTimeout(() => {
+        opening.style.display = 'none';
+        const game = document.getElementById('game');
+        game.style.display = 'flex';
+        game.style.animation = 'fadeIn 2s ease';
+        showScene(window.gameState.currentScene);
+      }, 600);
+    });
+  </script>
+</body>
+</html>
