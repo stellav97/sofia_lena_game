@@ -115,7 +115,7 @@ const sceneData = {
         walkIn: true,
         cat: false,
         choices: [
-          { text: "Scold Milou", textGR: "Μάλωσε τον Μιλού", next: "lose_sofiaGarden" },
+          { text: "Scold Milou", textGR: "Μάλωσε τον Φούφη", next: "lose_sofiaGarden" },
           { text: "Offer him treats", textGR: "Πρόσφερέ του λιχουδιές", next: "lose_sofiaGarden" },
           { text: "Cuddle him softly", textGR: "Αγκάλιασέ τον τρυφερά", next: "win_sofiaGarden" }
         ]
@@ -131,7 +131,7 @@ const sceneData = {
         walkIn: false,
         cat: false,
         choices: [
-          { text: "Scold Milou", textGR: "Μάλωσε τον Μιλού", next: "lose_sofiaGarden" },
+          { text: "Scold Milou", textGR: "Μάλωσε τον Φούφη", next: "lose_sofiaGarden" },
           { text: "Offer him treats", textGR: "Πρόσφερέ του λιχουδιές", next: "lose_sofiaGarden" },
           { text: "Cuddle him softly", textGR: "Αγκάλιασέ τον τρυφερά", next: "win_sofiaGarden" }
         ]
@@ -172,4 +172,5 @@ const sceneData = {
     } else {
       console.error("Scene not found:", id);
     }
+
   }
